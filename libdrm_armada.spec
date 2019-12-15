@@ -1,5 +1,5 @@
 %define major	0
-%define	snap	20150420
+%define	snap	20191215
 %define libname	%mklibname drm_armada %{major}
 %define devname	%mklibname -d drm_armada
 
@@ -10,8 +10,9 @@ Release:	0.%{snap}.1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		ftp.arm.linux.org.uk/~rmk/libdrm-armada.git
-# git clone git://ftp.arm.linux.org.uk/~rmk/libdrm-armada.git
-Source0:	%{name}-%{version}-%{snap}.tar.xz
+# git clone http://git.arm.linux.org.uk/cgit/libdrm-armada.git
+# git archive -o libdrm_armada-20191215.tar --prefix libdrm-armada/ origin/master
+Source0:	libdrm_armada-%{snap}.tar.xz
 BuildRequires:	pkgconfig(udev)
 BuildRequires:	pkgconfig(libdrm)
 
@@ -45,7 +46,7 @@ Provides:	%{name}-devel = %{version}-%{release}
 This package includes the development files for %{name}.
 
 %prep
-%setup -qn %{name}-%{version}-%{snap}
+%autosetup -p1 -n %{name}
 autoreconf -fiv
 
 %build
