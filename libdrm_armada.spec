@@ -13,6 +13,11 @@ Url:		ftp.arm.linux.org.uk/~rmk/libdrm-armada.git
 # git clone http://git.arm.linux.org.uk/cgit/libdrm-armada.git
 # git archive -o libdrm_armada-20191215.tar --prefix libdrm-armada/ origin/master
 Source0:	libdrm_armada-%{snap}.tar.xz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(udev)
 BuildRequires:	pkgconfig(libdrm)
 
